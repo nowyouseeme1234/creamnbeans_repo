@@ -1,17 +1,18 @@
 import mysql from 'mysql'
 
 const con = mysql.createConnection({
-    host: "sql12.freesqldatabase.com",
-    user: "sql12708608",
-    password: "Inj824Fg5r",
-    database: "sql12708608"
+    host: "localhost",
+    user: "creamnbeans_user",
+    password: "0925319379aA%",
+    database: "creamnbeansDB",
+    port: 3306
 });
 
 con.connect(function(err){
     if(err){
-        console.log(`connection error to external database ${err}`)
+        console.log(`connection error to local database ${err}`)
     }
-    else console.log("Connected To external database sql12708608")
+    else console.log("Connected To local database creamnbeansDB")
 })
 
 export default con;

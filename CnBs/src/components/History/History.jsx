@@ -9,7 +9,7 @@ const History = () => {
             if (result.data.Status) {
                 setOrders(result.data.Result);
             }
-            else alert(result.data.Error);
+            else console.log(result.data);
         }).catch(error => console.log(error))
     }, [])
     return (

@@ -37,8 +37,11 @@ router.get('/get_orders', (req, res) =>{
     })
 
 })
-router.get('/hi', (req, res) => {
-    return res.send("hi")
-})
+router.use("/history", (req, res) => {
+    res.send("Routing error go to https://creamnbeans-repo-client.vercel.app");
+  });
+  router.use("/orders", (req, res) => {
+    res.send("Routing error go to https://creamnbeans-repo-client.vercel.app");
+  });
 
 export { router as orderRouter };

@@ -20,6 +20,4 @@ app.use(orderRouter);
 app.listen(3000, () => {
   console.log("Server is listening");
 });
-app.use("/", (req, res) => {
-  res.send("Routing error go to https://creamnbeans-repo-client.vercel.app");
-});
+

@@ -119,6 +119,32 @@ const menuList = [
     },
     {
         id: 5,
+        title: 'Smoothies',
+        subtitle: [
+            {
+                id: 1,
+                name: 'Avocado Smoothie',
+                price: 140
+            },
+            {
+                id: 2,
+                name: 'Mixed Smoothie',
+                price: 160
+            },
+            {
+                id: 3,
+                name: 'Papaya Smoothie',
+                price: 140
+            },
+            {
+                id: 3,
+                name: 'Fusion Berry',
+                price: 160
+            },
+        ],
+    },
+    {
+        id: 6,
         title: 'Frappachino',
         subtitle: [
             {
@@ -149,7 +175,7 @@ const menuList = [
         ],
     },
     {
-        id: 6,
+        id: 7,
         title: 'Iced Latte',
         subtitle: [
             {

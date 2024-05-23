@@ -7,7 +7,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://green-berries-tie.loca.lt"
+      "https://creamnbeans-repo-server.vercel.app"
     ],
     methods: ["GET", "POST", "PUT"],
     credentials: true,

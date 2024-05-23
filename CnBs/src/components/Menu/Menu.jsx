@@ -197,9 +197,11 @@ const Menu = () => {
         }
     }, [])
 
-
-    
-
+    const handleTest = () =>{
+        axios.get('https://creamnbeans-repo-server.vercel.app/get_orders').then(result => {
+            console.log(result.data)
+        }).catch(error => console.log(error))
+    }
     const handleToggle = (itemName, buttonName, newState) => {
         setValues((prevValues) => ({
             ...prevValues,
@@ -267,6 +269,7 @@ const Menu = () => {
 
     return (
         <form>
+            <button type='button' className='p-2 bg-green-600 w-full font-bold font-poppins' onClick={handleTest}>TEST</button>
             <ul>
                 {menuList.map((menuItems) => (
                     <div>

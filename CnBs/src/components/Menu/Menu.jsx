@@ -251,7 +251,7 @@ const Menu = () => {
             toGo: itemDetails.toGo,
             rivo: itemDetails.rivo,
         }));
-        axios.post('http://localhost:3000/order', ordersToSend).then((result) => {
+        axios.post('https://creamnbeans-repo-server.vercel.app/order', ordersToSend).then((result) => {
             console.log(result.data);
             // Reset the values after successful submission
             setValues({

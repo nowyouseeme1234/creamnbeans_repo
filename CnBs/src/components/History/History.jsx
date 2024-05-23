@@ -10,7 +10,7 @@ const History = () => {
                 setOrders(result.data.Result);
             }
             else alert(result.data.Error);
-        })
+        }).catch(error => console.log(error))
     }, [])
     return (
         <div className='bg-primary h-full'>

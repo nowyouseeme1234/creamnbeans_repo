@@ -37,5 +37,8 @@ router.get('/get_orders', (req, res) =>{
     })
 
 })
+router.get('/hi', (req, res) => {
+    return res.send("hi")
+})
 
 export { router as orderRouter };

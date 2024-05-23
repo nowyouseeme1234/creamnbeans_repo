@@ -7,21 +7,19 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "http://192.168.101.16:8080",
-      "http://192.168.101.16:8081",
-      "https://mystifying-firefly-37170.pktriot.net",
+      "https://green-berries-tie.loca.lt"
     ],
     methods: ["GET", "POST", "PUT"],
     credentials: true,
   })
 );
-app.use("/", (req, res) => {
-  res.send("Server is running");
-});
+// app.use("/", (req, res) => {
+//   res.send("Server is running");
+// });
 
 app.use(express.json());
 app.use(orderRouter);
 
-app.listen(3000, "0.0.0.0", () => {
-  console.log("Server is running");
+app.listen(3000, () => {
+  console.log("Server is listening");
 });

@@ -8,19 +8,18 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://creamnbeans-repo-server.vercel.app",
-      "https://creamnbeans-repo-client.vercel.app"
+      "https://creamnbeans-repo-client.vercel.app",
     ],
     methods: ["GET", "POST", "PUT"],
     credentials: true,
   })
 );
-// app.use("/", (req, res) => {
-//   res.send("Server is running");
-// });
-
 app.use(express.json());
 app.use(orderRouter);
 
 app.listen(3000, () => {
   console.log("Server is listening");
+});
+app.use("/", (req, res) => {
+  res.send("Routing error go to https://creamnbeans-repo-client.vercel.app");
 });

@@ -32,18 +32,18 @@ router.get("/get_orders", (req, res) => {
   const sql = "SELECT * FROM orders";
   con.query(sql, (err, result) => {
     if (err) {
-      console.log(err)
-      console.log("Error")
-      console.log(res.json({ Status: false, Error: `${err}`, Authentication: `${con.state}` }))
+      console.log(err);
+      console.log(res.json({ Status: false, Error: `${err}`, Authentication: `${con.state}` }));
+      return res.json({ Status: false, Error: `${err}`, Authentication: `${con.state}` });
       
     } else {
       console.log(result);
-      console.log(res.json({ Status: true, Result: result, Authentication: `${con.state}` }))
+      console.log(res.json({ Status: true, Result: result, Authentication: `${con.state}` }));
+      return res.json({ Status: true, Result: result, Authentication: `${con.state}` });
     
     }
   });
 });
-console.log("console is working")
 router.get('/hi', (req, res) => {
   res.send("Server says hi")
 })

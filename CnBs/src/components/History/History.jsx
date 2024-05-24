@@ -8,6 +8,7 @@ const History = () => {
         axios.get('http://localhost:3000/get_orders').then(result => {
             if (result.data.Status) {
                 setOrders(result.data.Result);
+                console.log(result.data)
             }
             else console.log(result.data);
         }).catch(error => console.log(error))

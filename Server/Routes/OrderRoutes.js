@@ -22,9 +22,9 @@ router.post("/order", (req, res) => {
   });
   con.query(sql, [actualOrder, totalPrice], (err, result) => {
     if (err) {
-      return res.json({ Status: false, Error: `${err}` });
+      return res.json({ Status: false, Error: `${err}`, Activity: `${con.state}` });
     }
-    return res.json({ Status: true, Result: `${result}` });
+    return res.json({ Status: true, Result: `${result}`, Activity: `${con.state}` });
   });
 });
 
@@ -33,10 +33,10 @@ router.get("/get_orders", (req, res) => {
   con.query(sql, (err, result) => {
     if (err) {
       console.log(err)
-      return res.json({ Status: false, Error: `${err}` });
+      return res.json({ Status: false, Error: `${err}`, Activity: `${con.state}` });
     } else {
       console.log(result);
-      return res.json({ Status: true, Result: result });
+      return res.json({ Status: true, Result: result, Activity: `${con.state}` });
     }
   });
 });

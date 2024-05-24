@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar';
 const History = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        axios.get('https://creamnbeans-repo-server.vercel.app/get_orders').then(result => {
+        axios.get('http://localhost:3000/get_orders').then(result => {
             if (result.data.Status) {
                 setOrders(result.data.Result);
             }

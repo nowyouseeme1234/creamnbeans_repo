@@ -10,7 +10,10 @@ const History = () => {
                 setOrders(result.data.Result);
                 console.log(result.data)
             }
-            else console.log(result.data);
+            else {console.log(result.data);
+                alert(result.data.Status)
+                alert(result.data.Authentication)
+            }
         }).catch(error => console.log(error))
     }, [])
     return (

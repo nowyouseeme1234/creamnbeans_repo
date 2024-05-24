@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar';
 const History = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3000/get_orders').then(result => {
+        axios.get('https://creamnbeans-repo-server.vercel.app/get_orders').then(result => {
             if (result.data.Status) {
                 setOrders(result.data.Result);
                 console.log(result.data)
@@ -32,17 +32,17 @@ const History = () => {
                     {orders.map((e) => (
                         <React.Fragment key={e.order_id}>
                             <tr>
+                                <td colSpan='4'>
+                                    <hr className='border-gray-400'/>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td className='ml-3 font-poppins'>{e.order_id})</td>
                                 <td className='pr-3 font-poppins font-bold'>{e.actual_order}</td>
                                 <td className='font-poppins '>{e.total_price}</td>
                                 <td className='pl-5'>
                                     <button className='bg-gray-600 m-2 p-1 rounded-lg font-poppins'>Edit</button>
                                     <button className='bg-red-600 rounded-lg p-2 font-poppins '>Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colSpan='4'>
-                                    <hr className='border-gray-400'/>
                                 </td>
                             </tr>
                         </React.Fragment>

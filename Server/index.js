@@ -20,4 +20,7 @@ app.use(orderRouter);
 app.listen(3000, () => {
   console.log("Server is listening");
 });
+app.get('/', (req, res) => {
+  res.send("this is the / route")
+})
 

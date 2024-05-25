@@ -4,7 +4,7 @@ import con from "../utils/db.js";
 const router = express.Router();
 
 router.post("/order", (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://creamnbeans-repo-client.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', 'https://creamnbeans-repo-client.vercel.app/');
   let totalPrice = 0;
   let actualOrder = ``;
   const sql = "INSERT INTO orders (actual_order, total_price) values(?,?)";
@@ -30,17 +30,15 @@ router.post("/order", (req, res) => {
 });
 
 router.get("/get_orders", (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://creamnbeans-repo-client.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', 'https://creamnbeans-repo-client.vercel.app/');
   const sql = "SELECT * FROM orders";
   con.query(sql, (err, result) => {
     if (err) {
       console.log(err);
-      console.log(res.json({ Status: false, Error: `${err}`, Authentication: `${con.state}` }));
       return res.json({ Status: false, Error: `${err}`, Authentication: `${con.state}` });
       
     } else {
       console.log(result);
-      console.log(res.json({ Status: true, Result: result, Authentication: `${con.state}` }));
       return res.json({ Status: true, Result: result, Authentication: `${con.state}` });
     
     }

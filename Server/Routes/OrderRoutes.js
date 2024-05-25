@@ -30,7 +30,7 @@ router.post("/order", (req, res) => {
 });
 
 router.get("/get_orders", (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://creamnbeans-repo-client.vercel.app/');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
   const sql = "SELECT * FROM orders";
   con.query(sql, (err, result) => {
     if (err) {

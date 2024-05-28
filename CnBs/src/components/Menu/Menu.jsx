@@ -204,6 +204,8 @@ const menuList = [
 
 const Menu = () => {
     let totalPrice = 0;
+    let p = 0;
+    let q = 0;
     const [values, setValues] = useState({
         orders: {},
         totalQuantity: 0,
@@ -272,14 +274,25 @@ const Menu = () => {
             toGo: itemDetails.toGo,
             rivo: itemDetails.rivo,
         }));
-        axios.post('https://creamnbeans-repo-server.vercel.app/order', ordersToSend).then((result) => {
-            console.log(result.data);
-            // Reset the values after successful submission
-            setValues({
-                orders: {},
-                totalQuantity: 0,
-            });
-        }).catch((err) => console.log(err));
+        if (ordersToSend.length > 0)
+            {
+                console.log(ordersToSend[0].quantity ?? 0)
+        p = ordersToSend[0].price ??0;
+        q = ordersToSend[0].quantity ?? 0;
+            }
+        
+        if (p > 0 && q > 0) {
+            axios.post('https://creamnbeans-repo-server.vercel.app/order', ordersToSend).then((result) => {
+                console.log(result.data);
+                // Reset the values after successful submission
+                setValues({
+                    orders: {},
+                    totalQuantity: 0,
+                });
+            }).catch((err) => console.log(err));
+            alert(`Order recorded successfully`)
+        }
+        else alert(`NOTHING TO CONFIRM!`)
     };
     const handleCheckBtn = () => {
         setIsModalOpen(true)

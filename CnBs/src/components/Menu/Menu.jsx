@@ -282,7 +282,7 @@ const Menu = () => {
             }
         
         if (p > 0 && q > 0) {
-            axios.post('https://creamnbeans-repo-server.vercel.app/order', ordersToSend).then((result) => {
+            axios.post('http://localhost:3000/order', ordersToSend).then((result) => {
                 console.log(result.data);
                 // Reset the values after successful submission
                 setValues({

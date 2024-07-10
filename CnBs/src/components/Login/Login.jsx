@@ -18,9 +18,12 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://creamnbeans-repo-server.vercel.app/login", {username, password}).then(result=>{
+    axios.post("http://localhost:3000/login", {username, password}).then(result=>{
         if(result.data.Status){
+          if(result.data.Role === "User")
             navigate("/orders")
+          if(result.data.Role === "Admin")
+            navigate("/admin")
         }
         else{
             setError(`${result.data.Result}`)
